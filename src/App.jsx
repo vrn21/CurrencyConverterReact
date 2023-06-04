@@ -21,7 +21,7 @@ function App() {
 
   useEffect(() => {
     if(firstAmount) {
-      axios("https://api.freecurrencyapi.com/v1/latest", {
+      axios("https://api.freecurrencyapi.com/v1/latest?apikey=G2sZjuOq2Gt31lJvl2oyEWgpd6uQaRW9iEtI4wNp&currencies=EUR%2CUSD%2CCAD", {
         params: {
           apikey: import.meta.env.VITE_API_KEY,
           base_currency: codeFromCurrency,
@@ -61,9 +61,7 @@ function App() {
           <Typography variant='h5' sx={{ marginTop: "5px", fontWeight: "bold"}}>{resultCurrency*firstAmount} {toCurrency}</Typography>
         </Box>
       ) : ""}
-      <Typography fontSize="10px" sx={{ position: "absolute", bottom: "1rem", right: "1rem" }}>
-        <Link target="_blank" rel="noopener" href="https://www.youtube.com/canddev">Follow me on YouTube</Link>
-      </Typography>
+      
     </Container>
   )
 }
